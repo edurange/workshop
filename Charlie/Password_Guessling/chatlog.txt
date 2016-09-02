@@ -1,0 +1,32 @@
+<_date_:5:56PM>_character1_: sup guys
+<_date_:5:56PM>_character3_: Hey! It was nice seeing you all at the reunion!
+<_date_:5:56PM>_character2_: ya i cant blieve its been so long since we graduated
+<_date_:5:56PM>_character1_: _catchphrase_. i wasnt able to catch up with you two at the dinner. what have you been doing since we graduated from _highschool_
+<_date_:5:57PM>_character2_: i went 2 _college_
+<_date_:5:57PM>_character3_: Haha, go _mascot_!!
+<_date_:5:57PM>_character1_: _catchphrase_ man! are you still dating _exgirlfriend_?
+<_date_:5:57PM>_character2_: na bro we broke up when i was still living on _streetname_
+<_date_:5:57PM>_character3_: I remember going over there with you and bringing _petname_.
+<_date_:5:58PM>_character2_: ohhhhhh _petname_! is that lil furball still alive?
+<_date_:5:58PM>_character3_: No, _petname_ passed away on my mom’s birthday a week ago... :(
+<_date_:5:58PM>_character1_: dude that timing sucks 
+<_date_:5:58PM>_character2_: im sorry man
+<_date_:5:58PM>_character1_: how are your parents these days?
+<_date_:5:58PM>_character3_: After they divorced, my mom went back to being “Miss _momname_” and my dad went back to the town I grew up in.
+<_date_:5:59PM>_character1_: i thought you grew up near here?
+<_date_:5:59PM>_character3_: No, actually I was born in _hometown_.
+<_date_:5:59PM>_character1_: _catchphrase_! that is where i went to elementary school!
+<_date_:5:59PM>_character3_: Did you attend _elementaryschool_?
+<_date_:5:59PM>_character1_: yeah i did! _catchphrase_ ! _favteacher_ was my fav teacher
+<_date_:5:59PM>_character3_: Oh I remember _favteacher_! _favteacher_ was the one that gave all the kids cupcakes on their birthdays. 
+<_date_:5:59PM>_character1_: but if they had a birthday in the summer they would get their cupcake in either the beginning or end of the year depending which was closer to their actual bday
+<_date_:6:00PM>_character3_: That’s right! I remember! 
+<_date_:6:00PM>_character2_: speaking of bdays, isnt ur bday coming up soon _character3_?
+<_date_:6:00PM>_character1_: _catchphrase_ its this week right?
+<_date_:6:00PM>_character3_: Yep! In two days!
+<_date_:6:00PM>_character2_: u doin nything 4 it?
+<_date_:6:01PM>_character3_: I'm probably going to see the new _franchise_ movie.
+<_date_:6:01PM>_character1_: _catchphrase_ _franchise_ is literally my fav!
+<_date_:6:01PM>_character3_: You two should come with! I'm going for the 8:00PM showing at the theater down the road from _highschool_.
+<_date_:6:01PM>_character1_: _catchphrase_ ill be there
+<_date_:6:01PM>_character2_: me 2

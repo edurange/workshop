@@ -1,0 +1,3 @@
+_character1_: _highschool_, _catchphrase_, _elementaryschool_, _favteacher_, _franchise_
+_character2_: _highschool_, _college_, _mascot_,_exgirlfriend_,_streetname_
+_character3_: _highschool_, _petname_, _momname_, _hometown_, _elementaryschool_, <birthday>
