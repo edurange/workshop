@@ -38,6 +38,46 @@ class VigenereTool
 		end
 	end
 
+	# Finds the Index of Coincidence for a string
+	def indexCoincidence(string)
+		# counts how often each letter is found
+		alphaCount = Array.new(26, 0)
+		letters = 0.0
+		icTop = 0.0
+		string.each_char do |c|
+			letters += 1
+			alphaCount[c.downcase.ord - 97] += 1
+		end
+
+		alphaCount.each do |x|
+			if x > 1
+				icTop += x * (x - 1)
+			end
+		end
+		icBottom = letters * (letters - 1)
+		return (icTop / icBottom)
+	end
+
+	def key_length_find(message, maxKeyLength)
+		message.downcase.gsub(/\W+/, '')
+		averageIC = Array.new(maxKeyLength + 1, "0")
+		for i in 2..maxKeyLength
+			substrings = Array.new(i, "")
+			for j in 0..(message.length - 1)
+				substrings[j % i] += message[j]
+			end
+			# test I.C. of all substring[j] and average
+			ics = Array.new(i, 0)
+			for j in 0..(i - 1)
+				ics[j] = indexCoincidence(substrings[j])
+			end
+			icTotal = 0.0
+			ics.each {|x| icTotal += x}
+			averageIC[i] = icTotal / ics.length
+			puts("#{i} - #{averageIC[i]}")
+		end
+	end
+
 	def print_sub_sequences
 		@sequences.each do |seq|
 			puts(seq)
@@ -60,7 +100,8 @@ end
 
 encryption = File.read "#{ARGV[0]}"
 v = VigenereTool.new(encryption)
-v.sub_sequences(4)
-v.print_sub_sequences
-print("\n\n")
-v.print_spacing
+v.key_length_find("RIKVBIYBITHUSEVAZMMLTKASRNHPNPZICSWDSVMBIYFQEZUBZPBRGYNTBURMBECZQKBMBPAWIXSOFNUZECNRAZFPHIYBQEOCTTIOXKUNOHMRGCNDDXZWIRDVDRZYAYYICPUYDHCKXQIECIEWUICJNNACSAZZZGACZHMRGXFTILFNNTSDAFGYWLNICFISEAMRMORPGMJLUSTAAKBFLTIBYXGAVDVXPCTSVVRLJENOWWFINZOWEHOSRMQDGYSDOPVXXGPJNRVILZNAREDUYBTVLIDLMSXKYEYVAKAYBPVTDHMTMGITDZRTIOVWQIECEYBNEDPZWKUNDOZRBAHEGQBXURFGMUECNPAIIYURLRIPTFOYBISEOEDZINAISPBTZMNECRIJUFUCMMUUSANMMVICNRHQJMNHPNCEPUSQDMIVYTSZTRGXSPZUVWNORGQJMYNLILUKCPHDBYLNELPHVKYAYYBYXLERMMPBMHHCQKBMHDKMTDMSSJEVWOPNGCJMYRPYQELCDPOPVPBIEZALKZWTOPRYFARATPBHGLWWMXNHPHXVKBAANAVMNLPHMEMMSZHMTXHTFMQVLILOVVULNIWGVFUCGRZZKAUNADVYXUDDJVKAYUYOWLVBEOZFGTHHSPJNKAYICWITDARZPVU", 40)
+# v.sub_sequences(4)
+# v.print_sub_sequences 
+# print("\n\n")
+# v.print_spacing
