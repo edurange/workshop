@@ -1676,7 +1676,7 @@ Klementine
 Klimx
 Klingon
 Klinko
-Klös
+Kls
 Klutz
 Knight
 Knippe
@@ -2246,7 +2246,7 @@ Odo
 Odysseus
 Offa
 Ogden
-O’Harra
+OHarra
 Oja
 Oka
 Oksana
@@ -2317,7 +2317,7 @@ Patter
 Patti
 Patty
 Patty-Cake
-Pätu
+Ptu
 Paula
 Paulie
 Pauly
@@ -2597,7 +2597,7 @@ Rela
 Remington
 Remo
 Remus
-Rene’
+Rene
 Renny
 Reno
 Reo
@@ -2765,7 +2765,7 @@ Sassie
 Sassy
 Satako
 Satay
-Satin’s Little Helper
+Satins Little Helper
 Sauce
 Saucer
 Saucy
@@ -3156,7 +3156,7 @@ Tamara
 Tammy
 Tammy
 Tamzin
-T’ang
+Tang
 Tangerine
 Tangiers
 Tango
@@ -3198,7 +3198,7 @@ TeddyBear
 Teeko
 Teensie
 Teeny
-Teequi’
+Teequi
 Tejais
 Telly
 Tenill
@@ -3222,7 +3222,7 @@ Theodore
 Theresa
 Therey
 Theseus
-Th’la
+Thla
 Thomas
 Thor
 Thumper
@@ -3322,7 +3322,7 @@ Trapper
 Trash Cat
 Traveler
 Travis
-Tre’
+Tre
 Treats
 TreeGriddle
 Tremmer
@@ -3566,7 +3566,7 @@ Yantz
 Yapper
 Yara
 Yash
-Y–dunno
+Ydunno
 Yeller
 Yetta
 Yetti
