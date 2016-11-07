@@ -29,22 +29,17 @@ class Vigenere
         plaintext_int_array = string_to_int_array plaintext.upcase
         encrypted_int_array = []
         nospaces_int_array = []
+        key_location = 0
 
-        if spaces == false
-            plaintext_int_array.each_with_index do |letter, i|
-                if letter.between?(ALPHA_BASE, ALPHA_LAST)
-                    nospaces_int_array << letter
-                end
-            end
-            plaintext_int_array = nospaces_int_array
-        end
-
-        plaintext_int_array.each_with_index do |letter, i|
+        plaintext_int_array.each do |letter|
             if letter.between?(ALPHA_BASE, ALPHA_LAST)
-                encrypted_int = (letter + @key[i % @key.size]) % ALPHABET_SIZE + ALPHA_BASE
+                encrypted_int = (letter + @key[key_location % @key.size]) % ALPHABET_SIZE + ALPHA_BASE
                 encrypted_int_array << encrypted_int
-            elsif letter.between?(32, 126) && spaces
-                encrypted_int_array << letter
+                key_location = key_location + 1 % @key.size
+            elsif letter.between?(32, 126)
+                if spaces
+                    encrypted_int_array << letter
+                end
             else
                 @unreadable_characters = true
             end
@@ -56,10 +51,12 @@ class Vigenere
     def decrypt(ciphertext)
         ciphertext_int_array = string_to_int_array ciphertext.upcase
         decrypted_int_array = []
-        ciphertext_int_array.each_with_index do |letter, i|
+        key_location = 0
+        ciphertext_int_array.each do |letter|
             if letter.between?(ALPHA_BASE, ALPHA_LAST)
-                decrypted_int = (letter - @key[i % @key.size]) % ALPHABET_SIZE + ALPHA_BASE
+                decrypted_int = (letter - @key[key_location % @key.size]) % ALPHABET_SIZE + ALPHA_BASE
                 decrypted_int_array << decrypted_int
+                key_location = key_location + 1 % @key.size
             elsif letter.between?(32, 126)
                 decrypted_int_array << letter
             end
@@ -76,22 +73,8 @@ class Vigenere
     end
 
     def char_error_message
-        puts("The plaintext that was input contained characters that could not be read. They were ommited from the decrypted text.")
+        puts("The plaintext that was input contained characters that could not be read. They were ommited from the text before encryption.")
     end
 
 end
-
-
-
-puts "Enter plaintext "
-plaintextin = gets.chomp
-puts "Enter key " 
-keyin = gets.chomp
-b = Vigenere.new(keyin)
-cipher = b.encrypt_no_spaces(plaintextin)
-# your print code is unnecessary. just use print or puts as below.
-print("#{cipher}\n\n")
-decipher = b.decrypt(cipher)
-print("#{decipher}\n")
-
 

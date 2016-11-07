@@ -10,7 +10,6 @@ class VigenereTool
 		@probable_key_length = 0
 	end
 
-
 	def sub_sequences(seq_max)
 		if seq_max < 3
 			puts("Error: Can't test for sequence lengths less than 3.")
@@ -38,6 +37,25 @@ class VigenereTool
 		end
 	end
 
+	def print_sub_sequences
+		@sequences.each do |seq|
+			puts(seq)
+		end
+	end
+
+	def print_spacing
+		max_frequency = 0
+		for i in 3..20
+			spacing = @sequenceSpacing[i]
+			if spacing > max_frequency
+				max_frequency = spacing
+				@probable_key_length = i
+			end
+			puts("Number of sequences for key length #{i}: #{@sequenceSpacing[i]}")
+		end
+		puts("The key length is likely: #{@probable_key_length}\n")
+	end
+
 	# Finds the Index of Coincidence for a string
 	def indexCoincidence(string)
 		# counts how often each letter is found
@@ -60,7 +78,7 @@ class VigenereTool
 
 	def key_length_find(message, maxKeyLength)
 		message.downcase.gsub(/\W+/, '')
-		averageIC = Array.new(maxKeyLength + 1, "0")
+		averageIC = Array.new(maxKeyLength + 1, 0)
 		for i in 2..maxKeyLength
 			substrings = Array.new(i, "")
 			for j in 0..(message.length - 1)
@@ -76,31 +94,18 @@ class VigenereTool
 			averageIC[i] = icTotal / ics.length
 			puts("#{i} - #{averageIC[i]}")
 		end
+		averageAllIC = 0
+		averageIC.each {|x| averageAllIC += x}
+		averageAllIC = averageAllIC / averageIC.length
+		puts averageAllIC
 	end
 
-	def print_sub_sequences
-		@sequences.each do |seq|
-			puts(seq)
-		end
-	end
-
-	def print_spacing
-		max_frequency = 0
-		for i in 3..20
-			spacing = @sequenceSpacing[i]
-			if spacing > max_frequency
-				max_frequency = spacing
-				@probable_key_length = i
-			end
-			puts("Number of sequences for key length #{i}: #{@sequenceSpacing[i]}")
-		end
-		puts("The key length is likely: #{@probable_key_length}\n")
-	end
+	
 end
 
-encryption = File.read "#{ARGV[0]}"
-v = VigenereTool.new(encryption)
-v.key_length_find("RIKVBIYBITHUSEVAZMMLTKASRNHPNPZICSWDSVMBIYFQEZUBZPBRGYNTBURMBECZQKBMBPAWIXSOFNUZECNRAZFPHIYBQEOCTTIOXKUNOHMRGCNDDXZWIRDVDRZYAYYICPUYDHCKXQIECIEWUICJNNACSAZZZGACZHMRGXFTILFNNTSDAFGYWLNICFISEAMRMORPGMJLUSTAAKBFLTIBYXGAVDVXPCTSVVRLJENOWWFINZOWEHOSRMQDGYSDOPVXXGPJNRVILZNAREDUYBTVLIDLMSXKYEYVAKAYBPVTDHMTMGITDZRTIOVWQIECEYBNEDPZWKUNDOZRBAHEGQBXURFGMUECNPAIIYURLRIPTFOYBISEOEDZINAISPBTZMNECRIJUFUCMMUUSANMMVICNRHQJMNHPNCEPUSQDMIVYTSZTRGXSPZUVWNORGQJMYNLILUKCPHDBYLNELPHVKYAYYBYXLERMMPBMHHCQKBMHDKMTDMSSJEVWOPNGCJMYRPYQELCDPOPVPBIEZALKZWTOPRYFARATPBHGLWWMXNHPHXVKBAANAVMNLPHMEMMSZHMTXHTFMQVLILOVVULNIWGVFUCGRZZKAUNADVYXUDDJVKAYUYOWLVBEOZFGTHHSPJNKAYICWITDARZPVU", 40)
+#encryption = File.read "#{ARGV[0]}"
+#v = VigenereTool.new(encryption)
+#v.key_length_find("RIKVBIYBITHUSEVAZMMLTKASRNHPNPZICSWDSVMBIYFQEZUBZPBRGYNTBURMBECZQKBMBPAWIXSOFNUZECNRAZFPHIYBQEOCTTIOXKUNOHMRGCNDDXZWIRDVDRZYAYYICPUYDHCKXQIECIEWUICJNNACSAZZZGACZHMRGXFTILFNNTSDAFGYWLNICFISEAMRMORPGMJLUSTAAKBFLTIBYXGAVDVXPCTSVVRLJENOWWFINZOWEHOSRMQDGYSDOPVXXGPJNRVILZNAREDUYBTVLIDLMSXKYEYVAKAYBPVTDHMTMGITDZRTIOVWQIECEYBNEDPZWKUNDOZRBAHEGQBXURFGMUECNPAIIYURLRIPTFOYBISEOEDZINAISPBTZMNECRIJUFUCMMUUSANMMVICNRHQJMNHPNCEPUSQDMIVYTSZTRGXSPZUVWNORGQJMYNLILUKCPHDBYLNELPHVKYAYYBYXLERMMPBMHHCQKBMHDKMTDMSSJEVWOPNGCJMYRPYQELCDPOPVPBIEZALKZWTOPRYFARATPBHGLWWMXNHPHXVKBAANAVMNLPHMEMMSZHMTXHTFMQVLILOVVULNIWGVFUCGRZZKAUNADVYXUDDJVKAYUYOWLVBEOZFGTHHSPJNKAYICWITDARZPVU", 40)
 # v.sub_sequences(4)
 # v.print_sub_sequences 
 # print("\n\n")
